@@ -1,28 +1,29 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Metrics from "./components/Metrics";
+import Demo from "./components/Demo";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-slate-950">
+      <Hero />
+      <Features />
+      <Metrics />
+      <Demo />
+      <section id="paper" className="bg-slate-950">
+        <div className="mx-auto max-w-3xl px-6 py-16 text-slate-300">
+          <h2 className="text-2xl font-semibold text-white sm:text-3xl">Paper & artifacts</h2>
+          <p className="mt-3">
+            The TEDRAM research artifact includes model weights, evaluation protocols, and 500 manually
+            transcribed CVR segments. Contact us for access and reproduction details.
+          </p>
+          <ul className="mt-4 list-disc space-y-2 pl-6 text-slate-300">
+            <li>Transformer ASR backbone extended with multi‑channel acoustic fusion.</li>
+            <li>Temporal emotion drift module for stress/workload dynamics.</li>
+            <li>Curriculum learning with progressive noise injection.</li>
+          </ul>
         </div>
-      </div>
+      </section>
     </div>
-  )
+  );
 }
-
-export default App
